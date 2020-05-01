@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-<main class="page project-page">
+<main class="page project-page" id="content">
     <section class="portfolio-block project">
         <div class="row">
         <?php if( ! is_active_sidebar( 'sidebar-1' ) ): ?>

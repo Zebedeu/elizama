@@ -11,56 +11,54 @@ package elizamatheme
 
 $elizama_formats = array('aside', 'gallery', 'link', 'image', 'quote', 'status', 'video', 'audio', 'chat');
 
-add_theme_support( 'automatic-feed-links' );
-add_theme_support( 'post-formats', $elizama_formats );
-add_theme_support('custom-header');
-add_theme_support( "the_post_thumbnail" );
-add_theme_support( "title-tag" );
-add_theme_support('custom-background');
-add_theme_support( 'automatic-feed-links' );
-add_theme_support('post-thumbnails');
-add_theme_support('wide-align');
-add_theme_support('disable-custom-font-sizes');
-add_theme_support( 'editor-font-sizes', 
-    array(
 
-        array(
-            
-            'name' => __('Small', 'elizama'),
-            'shortName' => __('S', 'elizama'),
-            'size' => 11,
-            'slug' => 'small'
-        ),
-        array(
-            
-            'name' => __('Regular', 'elizama'),
-            'shortName' => __('M', 'elizama'),
-            'size' => 16,
-            'slug' => 'regular'
-        ),
-        array(
-            
-            'name' => __('Large', 'elizama'),
-            'shortName' => __('L', 'elizama'),
-            'size' => 20,
-            'slug' => 'large'
-        ),
-    ) 
-);
+        add_theme_support( 'automatic-feed-links' );
+        add_theme_support( 'post-formats', $elizama_formats );
+        add_theme_support( "the_post_thumbnail" );
+        add_theme_support( "title-tag" );
+        add_theme_support('custom-background');
+        add_theme_support( 'automatic-feed-links' );
+        add_theme_support('post-thumbnails');
+        add_theme_support('wide-align');
+        add_theme_support('disable-custom-font-sizes');
+        add_theme_support( 'editor-font-sizes', 
+            array(
+                array(       
+                    'name' => __('Small', 'elizama'),
+                    'shortName' => __('S', 'elizama'),
+                    'size' => 11,
+                    'slug' => 'small'
+                ),
+                array(        
+                    'name' => __('Regular', 'elizama'),
+                    'shortName' => __('M', 'elizama'),
+                    'size' => 16,
+                    'slug' => 'regular'
+                ),
+                array(
+                    
+                    'name' => __('Large', 'elizama'),
+                    'shortName' => __('L', 'elizama'),
+                    'size' => 20,
+                    'slug' => 'large'
+                ),
+            ) 
+        );
+  // WooCommerce support.
+        add_theme_support('woocommerce');
+        add_theme_support('wc-product-gallery-zoom');
+        add_theme_support('wc-product-gallery-lightbox');
+        add_theme_support('wc-product-gallery-slider');
+      
+        $elizama_header_support = array(
+            'width' => 520,
+            'height' => 128,
+            'flex-height' => true,
+            'flex-width'  => true,
+            'header-text' => false,
+        );
 
-
-function elizama_slide_name(){
-    $str = get_bloginfo( 'name' );
-    $output ='';
-    $title_site = str_split($str);
-    foreach ($title_site as $key => $chars) {
-        $char = strtoupper($chars);
-         $output .= '<span data-text="' . $char . '">'.$char.'</span>';
-     } 
-     echo wp_kses_post( $output ); 
-
-}
-
+        add_theme_support( 'custom-header', $elizama_header_support );
 
 /* Activate Nav Menu Option */
 function elizama_register_nav_menu()
@@ -115,7 +113,7 @@ function elizama_posted_meta()
         foreach ($categories as $category):
             if ($i > 1): $output .= $separator;
     endif;
-    $output .= '<a href="'.esc_url(get_category_link($category->term_id)).'" alt="'.esc_attr('View all posts in%s', $category->name).'">'.esc_html($category->name).'</a>';
+    $output .= '<a href="'.esc_url(get_category_link($category->term_id)).'">'.esc_html($category->name).'</a>';
     ++$i;
     endforeach;
     endif;
@@ -135,7 +133,7 @@ function elizama_posted_footer($onlyComments = false)
         } else {
             $comments = __('1 Comment', 'elizama');
         }
-        $comments = '<a class="comments-link small text-caps" href="'.get_comments_link().'">'.$comments.' <span class="elizama-icon elizama-comment"></span></a>';
+        $comments = '<a class="comments-link small text-caps" href="'.esc_url(get_comments_link()).'">'.$comments.' <span class="elizama-icon elizama-comment"></span></a>';
     } else {
         $comments = __('Comments are closed', 'elizama');
     }
@@ -209,7 +207,7 @@ function elizama_get_post_navigation()
 {
     if (get_comment_pages_count() > 1 && get_option('page_comments')):
 
-      get_template_part( 'templates/elizama-comment-nav');
+      // get_template_part( 'templates/elizama-comment-nav');
 
     endif;
 }

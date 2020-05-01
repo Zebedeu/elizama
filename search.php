@@ -3,7 +3,7 @@
 get_header( );
 ?>
 
-<main class="page project-page">
+<main class="page project-page" id="content">
     <section class="portfolio-block project">
 
         <div class="row">

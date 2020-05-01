@@ -1,10 +1,10 @@
 === elizama ===
-Contributors: Marcio Zebedeu
-Tags: full-width-template, translation-ready, blog, portfolio, e-commerce
+Contributors: marcio-zebedeu
+Tags: full-width-template, translation-ready, blog, portfolio, e-commerce, custom-background, custom-menu, right-sidebar
 Requires PHP: 5.6.20
 Requires at least: 5.2
-Tested up to: 5.3.2
-Stable tag: 0.14
+Tested up to: 5.4
+Stable tag: 0.24
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -12,7 +12,12 @@ A starter theme called elizama
 
 == Description ==
 
-The perfect theme for your Blog. Simple, beautiful and awesome in every resolution. Ready for responsive, with multiple custom options in the Administration Panel to make this Theme your definitive ally for your daily blog.
+The perfect built on Twitter Bootstrap v4.1 with  theme options that let  you create stunning blogs and websites.. Crispy, beautiful and awesome in every resolution. Ready for responsive.
+
+== Features == 
+
+This theme supports only 1 level.
+
 
 == Installation ==
 	
@@ -21,9 +26,18 @@ The perfect theme for your Blog. Simple, beautiful and awesome in every resoluti
 3. Click Activate to use your new theme right away.
 
 == Changelog ==
+== 1.0.23  == 
+added more Color Customizer
+corrected text typing
 
-= 1.0.14 =
-fixed xxxx
+= 1.0.19 =
+added Header Image
+remove multiple spansa
+added Skip Link
+Added Keyboard navigation 
+
+= 1.0.18 =
+added a header for the grid template
 
 = 1.0.13 =
 update remove margin bottom
@@ -43,12 +57,13 @@ Icons
 https://icomoon.io/#icons-icomoon
 Licence GPL CC BY 4.0
 
-Image header:
 
-Source: https://pxhere.com/en/photo/827728 Licence: CC0 Public Domain
+Image for theme screenshot, Copyright Lukas
+	License: CC0 1.0 Universal (CC0 1.0)
+	Source: https://stocksnap.io/photo/laptop-apple-ERH4XVBGCK
 
 * Josefin Slab licensed under SIL OFL 1.1 [http://scripts.sil.org/OFL] Â· Code licensed under MIT License [http://opensource.org/licenses/mit-license.html]
-
+* Font Awesome - https://fontawesome.com/v4.7.0/  | Font: SIL OFL 1.1, CSS: MIT License
 Ionicons, v2.0.1
   Created by Ben Sperry for the Ionic Framework, http://ionicons.com/
   https://twitter.com/benjsperry  https://twitter.com/ionicframework

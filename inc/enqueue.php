@@ -16,6 +16,7 @@ function elizama_theme_scripts() {
 	wp_enqueue_style( 'elizama-style', get_stylesheet_uri(), array(), wp_get_theme()->get( 'Version' ) );
     wp_enqueue_style( 'ionicons', get_theme_file_uri(). '/assets/fonts/ionicons.min.css', array(), '1.0.0', 'all' );
 	wp_enqueue_script( 'elizama-main', get_template_directory_uri() . '/assets/js/main.js', array('jquery'), '544', true );
+    wp_enqueue_style('font-awesome', get_template_directory_uri() . '/assets/css/font-awesome.min.css', array(), '4.7.0');
 
 	wp_enqueue_script( 'bootstrap', get_theme_file_uri() . '/assets/bootstrap/js/bootstrap.min.js', array( 'jquery' ), '20181214', true );
 

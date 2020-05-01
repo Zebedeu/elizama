@@ -160,7 +160,7 @@ class WP_Bootstrap_Navwalker extends \Walker_Nav_Menu {
             $atts['title'] = $item->attr_title;
         }
         $atts['target'] = ! empty( $item->target ) ? $item->target : '';
-        if ( '_blank' === $item->target && empty( $item->xfn ) ) { // Thanks to LukaszJaro, see https://github.com/conversions/conversions/issues/973.
+        if ( '_blank' === $item->target && empty( $item->xfn ) ) { // Thanks to LukaszJaro, see https://github.com/elizama/elizama/issues/973.
             $atts['rel'] = 'noopener noreferrer';
         } else {
             $atts['rel'] = $item->xfn;
@@ -331,7 +331,7 @@ class WP_Bootstrap_Navwalker extends \Walker_Nav_Menu {
             if ( $menu_class ) {
                 $fallback_output .= ' class="' . esc_attr( $menu_class ) . '"'; }
             $fallback_output .= '>';
-            $fallback_output .= '<li><a href="' . esc_url( admin_url( 'nav-menus.php' ) ) . '" title="' . esc_attr__( 'Add a menu', 'conversions' ) . '">' . esc_html__( 'Add a menu', 'conversions' ) . '</a></li>';
+            $fallback_output .= '<li><a href="' . esc_url( admin_url( 'nav-menus.php' ) ) . '" title="' . esc_attr__( 'Add a menu', 'elizama' ) . '">' . esc_html__( 'Add a menu', 'elizama' ) . '</a></li>';
             $fallback_output .= '</ul>';
             if ( $container ) {
                 $fallback_output .= '</' . esc_attr( $container ) . '>';

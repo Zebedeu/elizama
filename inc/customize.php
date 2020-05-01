@@ -44,9 +44,28 @@ function Elizama_customize_register($wp_customize)
     $wp_customize->remove_control('display_header_text');
 
 
+    /* Link Focus color */
+
+    $wp_customize->add_setting(
+        'link_hover_and_focus_menu',  array(
+            'default' => '#09a8ed',
+            'sanitize_callback' => 'sanitize_hex_color',
+        )
+    );
+    $wp_customize->add_control(
+        new WP_Customize_Color_Control(
+            $wp_customize, 'link_hover_and_focus_menu', array(
+                'label' => __('Link Focus', 'elizama'),
+                'section' => 'colors',
+                'settings' => 'link_hover_and_focus_menu',
+            )
+        )
+    );
+
+
     /*
 
-    Color text Site Name and Description 
+    Menu text color 
     */
 
 
@@ -57,12 +76,13 @@ function Elizama_customize_register($wp_customize)
 
     $wp_customize->add_control(
     new WP_Customize_Color_Control($wp_customize, 'color_text_menu', array(
-        'label' => __('color for Menus', 'elizama'),
+        'label' => __('Menu text color', 'elizama'),
         'section' => 'colors',
         'settings' => 'color_text_menu',
     ))
     );
     /*
+
 
     Menu color
     */
@@ -76,9 +96,68 @@ function Elizama_customize_register($wp_customize)
     $wp_customize->add_control(
         new WP_Customize_Color_Control(
             $wp_customize, 'background_color_menu', array(
-                'label' => __('Background Text Color for Menu and Footer', 'elizama'),
+                'label' => __('Menu and footer background color', 'elizama'),
                 'section' => 'colors',
                 'settings' => 'background_color_menu',
+            )
+        )
+    );
+
+    /* header background */
+
+
+    
+        $wp_customize->add_setting(
+        'background_header',  array(
+            'default' => '#ffffff',
+            'sanitize_callback' => 'sanitize_hex_color',
+        )
+    );
+    $wp_customize->add_control(
+        new WP_Customize_Color_Control(
+            $wp_customize, 'background_header', array(
+                'label' => __('header background color', 'elizama'),
+                'section' => 'colors',
+                'settings' => 'background_header',
+            )
+        )
+    );
+
+
+    /* Title color */
+
+
+    $wp_customize->add_setting(
+        'site_title_shadow',  array(
+            'default' => '#1e1e1e',
+            'sanitize_callback' => 'sanitize_hex_color',
+        )
+    );
+    $wp_customize->add_control(
+        new WP_Customize_Color_Control(
+            $wp_customize, 'site_title_shadow', array(
+                'label' => __('Title shadow color', 'elizama'),
+                'section' => 'colors',
+                'settings' => 'site_title_shadow',
+            )
+        )
+    );
+
+    /* Title color */
+
+
+    $wp_customize->add_setting(
+        'site_name',  array(
+            'default' => '#ffffff',
+            'sanitize_callback' => 'sanitize_hex_color',
+        )
+    );
+    $wp_customize->add_control(
+        new WP_Customize_Color_Control(
+            $wp_customize, 'site_name', array(
+                'label' => __('Title Color', 'elizama'),
+                'section' => 'colors',
+                'settings' => 'site_name',
             )
         )
     );
@@ -95,7 +174,7 @@ function Elizama_customize_register($wp_customize)
     $wp_customize->add_control(
         new WP_Customize_Color_Control(
             $wp_customize, 'background_sidebar', array(
-                'label' => __('Background Color Sidebar', 'elizama'),
+                'label' => __('Sidebar Background Color', 'elizama'),
                 'section' => 'colors',
                 'settings' => 'background_sidebar',
             )
@@ -128,77 +207,6 @@ function Elizama_customize_register($wp_customize)
     'section' => 'footer_text',
 ));
 
-    /*
-         *
-         *  SOCIAL
-         *
-         */
-
-    $wp_customize->add_section('social_sec', array(
-    'title' => __('Social Settings', 'elizama'),
-
-));
-
-    $wp_customize->add_setting('facebook', array(
-    'default' => '#facebook',
-    'sanitize_callback' => 'esc_url_raw',
-));
-
-    $wp_customize->add_control('facebook', array(
-    'label' => __('Add facebook link here', 'elizama'),
-    'setting' => 'facebbok',
-    'section' => 'social_sec',
-    'type'    => 'url',
-));
-
-    $wp_customize->add_setting('twitter', array(
-    'default' => '#twitter',
-    'sanitize_callback' => 'esc_url_raw',
-));
-
-    $wp_customize->add_control('twitter', array(
-    'label' => __('Add twitter link here', 'elizama'),
-    'setting' => 'twitter',
-    'section' => 'social_sec',
-    'type'    => 'url',
-));
-
-    $wp_customize->add_setting('instagram', array(
-    'default' => '#instagram',
-    'sanitize_callback' => 'esc_url_raw',
-));
-
-    $wp_customize->add_control('instagram', array(
-    'label' => __('Add instagram link here', 'elizama'),
-    'setting' => 'instagram',
-    'section' => 'social_sec',
-    'type'    => 'url',
-));
-
-    $wp_customize->add_setting('google', array(
-    'default' => '#google',
-    'sanitize_callback' => 'esc_url_raw',
-));
-
-    $wp_customize->add_control('google', array(
-    'label' => __('Add google plus link here', 'elizama'),
-    'setting' => 'google',
-    'section' => 'social_sec',
-    'type'    => 'url',
-));
-
-    $wp_customize->add_setting('linkedin', array(
-    'default' => '#linkedin',
-    'sanitize_callback' => 'esc_url_raw',
-));
-
-    $wp_customize->add_control('linkedin', array(
-    'label' => __('Add linkedin link here', 'elizama'),
-    'setting' => 'linkedin',
-    'section' => 'social_sec',
-    'type'    => 'url',
-));
-
 
 }
 add_action('customize_register', 'elizama_customize_register');
@@ -209,15 +217,41 @@ function elizama_custom_css()
     ?>
 <style type="text/css">
 
-    .colort a, .colort ul li a {
+    .colort a, .colort ul li a, .elizama-footer, .footer-credits-text a {
         color: <?php echo esc_html(get_theme_mod('color_text_menu', '#ffffff')); ?> !important;
     }
 
-    .bg-white, .elizama-footer, .dropdown-menu.show  {
+    .navbar-light .navbar-nav .nav-link:focus,
+    .navbar-light .navbar-nav .nav-link:hover,
+    .skip-link, .screen-reader-text:focus,
+    .entry-meta a:hover, .entry-meta a:focus,
+    .standard-featured-link:focus,
+    .entry-content a:focus,
+    .entry-content .elizama-tooltip:focus,
+    .entry-content .elizama-popover:focus,
+    .post-link-nav a:focus,
+     a.comment-reply-link:focus,
+    .elizama-sidebar a:focus,
+    .hvr-bounce-to-top:focus  {
+        color: <?php echo esc_html(get_theme_mod('link_hover_and_focus_menu', '#09a8ed')); ?> !important;
+
+    }
+    .bg-white, .elizama-footer, .dropdown-menu.show, .skip-link, .screen-reader-text  {
         background-color: <?php echo esc_html(get_theme_mod('background_color_menu', '#1e1e1e')); ?> !important;
     }
-    .elizama-sidebar, .btn-elizama {
+    .elizama-sidebar, .btn-elizama, .single_add_to_cart_button, .checkout-button, .button.alt {
         background-color: <?php echo esc_html(get_theme_mod('background_sidebar', '#1e1e1e')); ?> !important;
+    }
+    .site-name h1 span::after {
+        color: <?php echo esc_html(get_theme_mod('site_title_shadow', '#1e1e1e')); ?>;
+    }
+    .site-name h1 {
+        color: <?php echo esc_html(get_theme_mod('site_name', '#fff')); ?>;
+
+    }
+    .blockit {
+        background-color: <?php echo esc_html(get_theme_mod('background_header', '#ffffff')); ?> !important;
+  
     }
 
 

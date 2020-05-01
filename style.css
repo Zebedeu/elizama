@@ -1,11 +1,11 @@
 /*
-	
+  
 Theme Name: Elizama
-Theme URI:  
+Theme URI: http://marciozebedeu.com/elizama/
 Author: Marcio Zebedeu
 Author URI: http://marciozebedeu.com/
-Description: The perfect theme for your Blog. Crispy, beautiful and awesome in every resolution. Ready for responsive.
-Version: 0.14
+Description: The perfect built on Twitter Bootstrap v4.1 with  theme options that let  you create stunning blogs and websites.. Crispy, beautiful and awesome in every resolution. Ready for responsive.
+Version: 0.24
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: elizama
@@ -20,7 +20,7 @@ Use it to make something cool, have fun, and share what you've learned with othe
 
 @charset "UTF-8";
 /*
-	@package elizama
+  @package elizama
 */
 /*
   Font Icon 
@@ -41,8 +41,8 @@ Use it to make something cool, have fun, and share what you've learned with othe
 
 
 /*
-	Mixins
-	------------------------------------------------
+  Mixins
+  ------------------------------------------------
 */
 @keyframes spin {
   from {
@@ -77,7 +77,9 @@ a {
   transition: color 320ms ease;
 }
 
-a:hover, a:focus {
+a:hover
+ /*a:focus*/
+  {
   text-decoration: none;
   color: #333333;
   font-weight: 400;
@@ -106,11 +108,11 @@ h2, h3 {
   font-weight: 800;
 }
 /*
-	@package elizama
+  @package elizama
 */
 /*
-	Placeholder
-	------------------------------------------------
+  Placeholder
+  ------------------------------------------------
 */
 .header-container, .elizama-format-image .entry-header, .elizama-format-gallery .carousel-control {
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
@@ -214,7 +216,7 @@ p {
 }
 
 /*
-	@package elizama
+  @package elizama
 */
 .sticky {
   display: block;
@@ -302,8 +304,8 @@ p {
 .screen-reader-text {
   clip: rect(1px, 1px, 1px, 1px);
   position: absolute !important;
-  height: 1px;
-  width: 1px;
+  height: auto;
+  width: 10%;
   overflow: hidden;
 }
 
@@ -312,7 +314,7 @@ p {
   border-radius: 3px;
   box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
   clip: auto !important;
-  color: #21759b;
+  /*color: #21759b;*/
   display: block;
   font-size: 14px;
   font-size: 0.875rem;
@@ -322,7 +324,7 @@ p {
   line-height: normal;
   padding: 15px 23px 14px;
   text-decoration: none;
-  top: 5px;
+  top: 100px;
   width: auto;
   z-index: 100000;
   /* Above WP toolbar. */
@@ -423,8 +425,8 @@ p {
 }
 
 /* 
-	Header 
-	------------------------------------------------
+  Header 
+  ------------------------------------------------
 */
 .header-container {
   position: relative;
@@ -460,8 +462,8 @@ p {
 
 
 /* 
-	Standard Post Format 
-	------------------------------------------------
+  Standard Post Format 
+  ------------------------------------------------
 */
 article {
   padding-top: 40px;
@@ -522,10 +524,10 @@ h1.entry-title:after {
   color: #898989;
 }
 
-.entry-meta a:hover, .entry-meta a:focus {
+/*.entry-meta a:hover, .entry-meta a:focus {
   color: #333333;
 }
-
+*/
 .standard-featured-link {
   display: block;
   position: relative;
@@ -611,8 +613,8 @@ h1.entry-title:after {
 
 
 /* 
-	Link Post Format 
-	------------------------------------------------
+  Link Post Format 
+  ------------------------------------------------
 */
 .elizama-format-link h1.entry-title:before, .elizama-format-link h1.entry-title:after {
   display: none;
@@ -643,8 +645,8 @@ h1.entry-title:after {
   font-family: 'elizama-font';
 }
 /* 
-	Footer Section
-	------------------------------------------------
+  Footer Section
+  ------------------------------------------------
 */
 .elizama-footer {
   background-color: #333;
@@ -659,8 +661,8 @@ h1.entry-title:after {
 
 
 /* 
-	Single
-	------------------------------------------------
+  Single
+  ------------------------------------------------
 */
 .entry-content {
   margin-top: 40px;
@@ -677,11 +679,9 @@ h1.entry-title:after {
   color: #000000;
 }
 
-.entry-content a:hover, .entry-content a:focus,
+.entry-content a:hover,
 .entry-content .elizama-tooltip:hover,
-.entry-content .elizama-tooltip:focus,
-.entry-content .elizama-popover:hover,
-.entry-content .elizama-popover:focus {
+.entry-content .elizama-popover:hover {
   color: #000000;
   font-weight:200;
 }
@@ -706,7 +706,7 @@ h1.entry-title:after {
   padding: 0 5px;
 }
 
-.post-link-nav a:hover, .post-link-nav a:focus {
+.post-link-nav a:hover {
   color: #000;
   font-weight: 400;
 }
@@ -717,8 +717,8 @@ h1.entry-title:after {
 }
 
 /* 
-	Comment section
-	------------------------------------------------
+  Comment section
+  ------------------------------------------------
 */
 .comments-area {
   border-top: 4px solid #F1F1F1;
@@ -819,7 +819,7 @@ a.comment-reply-link {
   color: #19253c;
 }
 
-a.comment-reply-link:hover, a.comment-reply-link:focus {
+a.comment-reply-link:hover {
   color: #F56B08;
 }
 
@@ -828,8 +828,8 @@ a.comment-reply-link:hover, a.comment-reply-link:focus {
 }
 
 /* 
-	Sidebar section
-	------------------------------------------------
+  Sidebar section
+  ------------------------------------------------
 */
 .sidebar-overlay {
   top: 0;
@@ -866,7 +866,7 @@ a.comment-reply-link:hover, a.comment-reply-link:focus {
   color: #fff;
 }
 
-.elizama-sidebar a:hover, .elizama-sidebar a:focus {
+.elizama-sidebar a:hover {
   color: #fff;
 }
 
@@ -880,8 +880,8 @@ a.comment-reply-link:hover, a.comment-reply-link:focus {
 
 
 /* 
-	Widgets section
-	------------------------------------------------
+  Widgets section
+  ------------------------------------------------
 */
 .elizama-widget {
   margin: 30px 0 50px;
@@ -1080,11 +1080,9 @@ include media(">=medium").alignwide {
   top: 14px;
   right: 20px;
   color: black;
-  /*text-shadow: 0px 0px 5px black;*/
 
 }
  .site-name h1 {
-  color: #fff;
   font-family: Avenir Next, Helvetica Neue, Helvetica, Tahoma, sans-serif;
   font-size: 1em;
   font-weight: 500;
@@ -1118,7 +1116,6 @@ include media(">=medium").alignwide {
 }
 .site-name h1 span::after {
   z-index: 2;
-  color: #000;
   text-shadow: -1px 0 1px #684da3, 1px 0 1px rgba(0,0,0,0.8);
   -webkit-transform: rotateY(-40deg);
           transform: rotateY(-40deg);
@@ -1198,64 +1195,6 @@ a.site-description {
     z-index: 1;
 }
 
-.search-bar a{
-    font-size:30px;
-    padding-left: 5%;
-    color: white;
-}
-.search-area {
-  height: 100%;
-  width: 100%;
-  display: none;
-  position: fixed;
-  z-index: 999;
-  top: 0;
-  left: 0;
-  background-color: rgba(0,0,0, 0.9);
-}
-.search-field {
-  position: relative;
-  top: 46%;
-  width: 80%;
-  text-align: center;
-  margin-top: 30px;
-  margin: auto;
-}
-.search-area .closebtn {
-  position: absolute;
-  top: 20px;  
-  right: 45px;
-  font-size: 60px;
-  cursor: pointer;
-  color: white;
-}
-.search-area .closebtn:hover {
-  color: #ccc;
-}
-.search-area input[type=text] {
-  padding: 15px;
-  font-size: 17px;
-  border: none;
-  float: left;
-  width: 100%;
-  background: white;
-}
-.search-area input[type=text]:hover {
-  background: #f1f1f1;
-}
-.search-area button {
-  float: left;
-  width: 20%;
-  padding: 15px;
-  background: #ddd;
-  font-size: 17px;
-  border: none;
-  cursor: pointer;
-}
-.search-area button:hover {
-  background: #bbb;
-}
-
 .hvr-bounce-to-top {
     backface-visibility: hidden;
     background: #f00 none repeat scroll 0 0;
@@ -1288,7 +1227,7 @@ a.site-description {
     transition-timing-function: ease-out;
     z-index: -1;
 }
-.hvr-bounce-to-top:hover, .hvr-bounce-to-top:focus, .hvr-bounce-to-top:active {
+.hvr-bounce-to-top:hover, .hvr-bounce-to-top:active {
     color: #fff;
 }
 .hvr-bounce-to-top:hover::before, .hvr-bounce-to-top:focus::before, .hvr-bounce-to-top:active::before {

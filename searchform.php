@@ -1,12 +1,14 @@
-     <div class="col-3">
-        <div class="search-area">
-            <span class="closebtn">×</span>
-            <div class="search-field">
-                <form method="get"  action="<?php echo esc_url(home_url('/')); ?>" >
-                   <input type="text" placeholder="<?php echo esc_attr_x('Search &hellip;', 'placeholder', 'elizama');?>" value="<?php echo get_search_query(); ?>" name="s">
-                   <button type="submit"><img src="<?php  echo esc_url(get_template_directory_uri(). '/assets/fonts/svg/search.svg');?>"></button>
-                </form>
-            </div>
-        </div>
-    </div>
 
+<form method="get" id="searchform" action="<?php echo esc_url( home_url( '/' ) ); ?>" role="search">
+    <label class="sr-only" for="s"><?php esc_html_e( 'Search', 'elizama' ); ?></label>
+    <div class="input-group">
+        <input class="field form-control" id="s" name="s" type="text"
+            placeholder="<?php esc_attr_e( 'Search &hellip;', 'elizama' ); ?>" value="<?php the_search_query(); ?>">
+        <span class="input-group-append">
+            <button class="submit btn  search-buttom" id="searchsubmit" name="submit" type="submit">
+            	<img src="<?php  echo esc_url(get_template_directory_uri(). '/assets/fonts/svg/search.svg');?>">
+            </button>
+
+    </span>
+    </div>
+</form>

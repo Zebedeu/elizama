@@ -9,9 +9,14 @@ function elizama_content_width()
 add_action('after_setup_theme', 'elizama_content_width', 0);
 
 
+if(! function_exists( 'wp_body_open' ) ){
+        function wp_body_open() {
+            do_action( 'wp_body_open' );
+        }
+}
 
 function elizama_setup(){
-		load_theme_textdomain( 'elizama', get_template_directory() . '/languages' );
+		load_theme_textdomain( 'elizama' );
 	}
 add_action( 'after_setup_theme', 'elizama_setup' );
 
@@ -34,3 +39,11 @@ require get_template_directory().'/inc/class-wp-bootstrap-navwalker.php';
 require get_template_directory() . '/inc/theme-support.php';
 require get_template_directory().'/inc/enqueue.php';
 require get_template_directory().'/inc/customize.php';
+
+if (class_exists('WooCommerce')) {
+
+    /**
+     * WooCommerce options
+     */
+    require_once( trailingslashit(get_template_directory()) . 'inc/woocommerce.php' );
+}

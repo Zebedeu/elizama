@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-    <main class="page projets-page">
+    <main class="page projets-page" id="content">
         <section class="portfolio-block projects compact-grid">
             <div class="row no-gutters">
 

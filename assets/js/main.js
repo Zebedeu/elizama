@@ -6,6 +6,7 @@ jQuery('.search-bar > a').on('click', function() {
       }, 500);
    });
 }); 
+
 jQuery('.closebtn').on('click', function() {
    jQuery('.search-area').toggle(function() {
       jQuery(this).animate({              
@@ -14,3 +15,5 @@ jQuery('.closebtn').on('click', function() {
 });
 
 });
+
+
